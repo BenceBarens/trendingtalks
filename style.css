@@ -9,17 +9,31 @@ body{
     font-style: normal;
 }
 
+@keyframes paginaOvergang{
+    from{
+        opacity: 0;
+        transform:translateY(20vh);
+    }
+
+    to{
+        opacity: 1;
+        transform:translateY(0);
+    }
+}
+
 /*HEADER EN NAVIGATIE ------------------------------------------------------*/
 
 header{
     background-color: white;
-    position: fixed;
+    position: sticky;
     top: 0;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-flow: row wrap;
     width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 header img{
@@ -45,7 +59,7 @@ nav a{
     border-radius: 5rem;
 }
 
-nav a:hover{
+nav a:hover, nav a:focus{
     color: #e73d28;
     background: #EBEBEB;
 }
@@ -57,8 +71,10 @@ nav a:hover{
 /*MAIN PAGINA OPMAAK ------------------------------------------------------*/
 
 main{
-    padding: 5rem;
+    padding: 10%;
+    padding-top: 0rem;
     min-height: 100vh;
+    animation: paginaOvergang 0.5s;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -66,12 +82,12 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
-    color: #232249;
 }
 
 h1{
     text-align: center;
     font-size: 4rem;
+    color: #232249;
 }
 
 /*FOOTER OPMAAK ---------------------------------------------------------*/
@@ -81,7 +97,7 @@ footer{
     padding: 1rem 5rem;
 }
 
-footer h1, h2, h3, h4, h5, h6{
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6{
     font-family: "Anton", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -90,5 +106,57 @@ footer h1, h2, h3, h4, h5, h6{
 }
 
 footer a{
+    color: white;
+}
+
+/*AFLEVERING OVERZICHT ---------------------------------------------------------*/
+
+.afleveringen {
+    position: relative;
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.afleveringen article {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin-left: auto;
+    background-color: #e73d28;
+}
+
+.afleveringen article .list {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    line-height: 0.5;
+    margin-bottom: 0.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.afleveringen article .preview {
+    display: none;
+    background-color: #232249;
+    color: white;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Voor het onderstaande onderdeel is gebruik gemaakt van AI. 
+De rest van de  CSS is volledig zelfgeschreven.*/
+.afleveringen article:hover .preview,
+.afleveringen article:hover .list,
+.afleveringen article .list:hover + .preview,
+.afleveringen article .preview:hover,
+.afleveringen article:focus-within .preview,
+.afleveringen article .list:focus + .preview {
+    display: block;
+    background-color: #232249;
     color: white;
 }
