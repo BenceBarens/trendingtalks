@@ -36,6 +36,12 @@ header{
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
+@media only screen and (max-width: 33rem) {
+    header {
+      justify-content: center;
+    }
+}
+
 header img{
     width: 8rem;
     margin: 1rem;
@@ -90,6 +96,11 @@ h1{
     color: #232249;
 }
 
+a:hover, a:focus{
+    color: #e73d28;
+    transition: all 200ms ease;
+}
+
 /*FOOTER OPMAAK ---------------------------------------------------------*/
 
 footer{
@@ -111,11 +122,79 @@ footer a{
 
 /*AFLEVERING OVERZICHT ---------------------------------------------------------*/
 
+article .preview div a{
+    color: white;
+    display: flex;
+    padding: 0.2rem 0;
+}
+
+article .preview div a:hover, article .preview div a:focus{
+    color: #e73d28;
+    display: flex;
+    padding: 0.2rem 0;
+}
+
+article .preview div ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+article .preview div img{
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+article .preview div iframe{
+    max-width:95%;
+    width: 20rem;
+    height: 11.25rem;
+    border: none;
+}
+
+
+
+.afleveringen article .preview {
+    display: none;
+    color: white;
+    width: 50%;
+    height: 42rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+@media only screen and (max-width: 33rem) {
+    
+.afleveringen>p{
+    display: none;
+}
+ .afleveringen{
+    padding: 0.1rem 1rem;
+    background-color: white;
+    border-radius: 1rem;
+ }
+}
+
+@media only screen and (min-width: 34rem) {
+
+.afleveringen>p{
+    top: 1rem;
+    left: 5%;
+    max-width: 40%;
+    position:absolute;
+    text-align: center;
+    color: #BBBBBB;
+}
+
 .afleveringen {
     position: relative;
     background-color: white;
     border-radius: 1rem;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 40rem;
 }
 
 .afleveringen article {
@@ -132,24 +211,20 @@ footer a{
     padding: 1rem;
     line-height: 0.5;
     margin-bottom: 0.2rem;
-    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.afleveringen article .preview {
-    display: none;
-    background-color: #232249;
-    color: white;
-    height: 100%;
-    width: 50%;
-    position: absolute;
+article .preview div{
+    padding: 1rem;
+    position: sticky;
     top: 0;
-    left: 0;
 }
 
-/* Voor het onderstaande onderdeel is gebruik gemaakt van AI. 
+/* Voor het onderstaande onderdeel is gebruik gemaakt van gAI. 
 De rest van de  CSS is volledig zelfgeschreven.*/
+
 .afleveringen article:hover .preview,
 .afleveringen article:hover .list,
 .afleveringen article .list:hover + .preview,
@@ -159,4 +234,6 @@ De rest van de  CSS is volledig zelfgeschreven.*/
     display: block;
     background-color: #232249;
     color: white;
+    transition: all 200ms ease;
+}
 }
