@@ -1,0 +1,422 @@
+/* Live website: https://bencebarens.github.io/trendingtalks/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Faustina:ital,wght@0,300..800;1,300..800&display=swap');
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #EBEBEB;
+    font-family: "Faustina", system-ui;
+    font-style: normal;
+}
+
+@keyframes paginaOvergang{
+    from{
+        opacity: 0;
+        transform:translateY(20vh);
+    }
+
+    to{
+        opacity: 1;
+        transform:translateY(0);
+    }
+}
+
+/*HEADER EN NAVIGATIE ------------------------------------------------------*/
+
+header{
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+@media only screen and (max-width: 33rem) {
+    header {
+      justify-content: center;
+    }
+}
+
+header img{
+    width: 8rem;
+    margin: 1rem;
+}
+
+header ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    transition: color,background 200ms ease;
+    padding: .5rem 1rem;
+    border-radius: 5rem;
+}
+
+nav a:hover, nav a:focus{
+    color: #e73d28;
+    background: #EBEBEB;
+}
+
+.currentpage{
+    font-weight: bolder;
+}
+
+/*MAIN PAGINAS OPMAAK -----------------------------------------------------------*/
+
+main{
+    padding: 10%;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+    min-height: 90vh;
+    animation: paginaOvergang 0.5s;
+}
+
+@media only screen and (max-width: 33rem) {
+    main{
+      padding: 5%;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    color: #232249;
+    margin: 0;
+}
+
+a:hover, a:focus{
+    color: #e73d28;
+    transition: all 200ms ease;
+}
+
+a{
+    color: black;
+}
+
+iframe{
+    border: none;
+    border-radius: 1rem;
+}
+
+.button{
+    border-radius: 5rem;
+    background-color: #232249;
+    color: white;
+    transition: all 200ms ease;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    padding: .3rem;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.button:hover{
+    border-radius: .5rem;
+    background-color: #e73d28;
+    color: white
+}
+
+.button img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Home pagina */
+
+.splash{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.splash-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px);
+    opacity: 30%;
+    z-index: -1;
+}
+
+.splash h1{
+    color: #232249;
+    font-size: 10vw;
+    margin: 0;
+    margin-bottom: -2vw;
+}
+
+.splash > p{
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    color: black;
+    font-size: 2.5vw;
+    font-style: italic;
+}
+
+.splash p span{
+    font-style: normal;
+}
+
+.splash div{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.splash div p{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.home section{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.home iframe{
+    width: 50vw;
+    height: 28vw;
+}
+
+.home p{
+    max-width: 50rem;
+    margin: 1rem auto;
+}
+
+/* Over ons pagina */
+
+.about{
+    text-align: center;
+}
+
+.about section{
+    margin-top: 2rem;
+    border-radius: 1rem;
+    background-color: #232249;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.about section article{
+    max-width: 25rem;
+}
+
+.about section article p{
+    text-align: justify;
+}
+
+.about section article img{
+    border-radius: 1rem;
+    max-width: 25rem;
+}
+
+/* Afleveringen pagina */
+
+.nieuwste-aflevering{
+    background-color: #232249;
+    color: white;
+    padding: 2rem 3rem;
+    margin-bottom: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 33rem) {
+    .nieuwste-aflevering{
+      padding: .5rem 1rem;
+    }
+}
+
+.nieuwste-aflevering h3{
+    font-size: 2.5rem;
+    margin: 0rem;
+}
+
+.nieuwste-aflevering div{
+    max-width: 45%;
+    min-width: 18rem;
+}
+
+.nieuwste-aflevering iframe{
+    margin-top: 1rem;
+    width: 45%;
+    min-width: 18rem;
+    height: 15rem;
+    
+}
+
+
+/*FOOTER OPMAAK ----------------------------------------------------------------*/
+
+footer{
+    background-color: #232249;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+
+footer h2{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    color: white;
+}
+
+footer a{
+    color: white;
+}
+
+footer ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+footer p{
+    margin: 0;
+}
+
+/*AFLEVERING OVERZICHT ---------------------------------------------------------*/
+
+.streaming a{
+    color: white;
+    display: flex;
+    padding: 0.2rem 0;
+}
+
+.streaming a:focus, .streaming a:hover{
+    color: #e73d28;
+}
+
+.streaming{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.streaming img{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+article .preview div iframe{
+    max-width:95%;
+    width: 20rem;
+    height: 11.25rem;
+}
+
+.afleveringen article .preview {
+    display: none;
+    color: white;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 45rem;
+
+}
+
+.afleveringen article .list {
+    border-bottom: .2rem solid #e73d28;
+}
+
+
+@media only screen and (max-width: 38.9rem) {
+    
+.afleveringen>p{
+    display: none;
+}
+ .afleveringen{
+    padding: 0.1rem 1rem;
+    background-color: white;
+    border-radius: 1rem;
+ }
+}
+
+@media only screen and (min-width: 39rem) {
+
+.afleveringen>p{
+    margin: 1rem;
+    max-width: 40%;
+    position:absolute;
+    color: #BBBBBB;
+}
+
+.afleveringen {
+    position: relative;
+    background-color: white;
+    border-radius: 1rem;
+    overflow-y: scroll;
+    height: 40rem;
+}
+
+
+.afleveringen article {
+    width: 50%;
+    margin-left: auto;
+}
+
+.afleveringen article .list {
+    padding: 1rem;
+    line-height: 1.3;
+    border-left: .2rem solid #EBEBEB;
+}
+
+article .preview div{
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+/* Voor het onderstaande onderdeel is gebruik gemaakt van gAI. 
+De rest van de  CSS is volledig zelfgeschreven.*/
+
+.afleveringen article:hover .preview,
+.afleveringen article:hover .list,
+.afleveringen article .list:hover + .preview,
+.afleveringen article .preview:hover,
+.afleveringen article:focus-within .preview,
+.afleveringen article .list:focus + .preview {
+    display: block;
+    background-color: #232249;
+    color: white;
+    transition: all 200ms ease;
+    border: none;
+}
+}
