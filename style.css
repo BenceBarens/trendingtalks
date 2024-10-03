@@ -82,6 +82,12 @@ main{
     animation: paginaOvergang 0.5s;
 }
 
+@media only screen and (max-width: 33rem) {
+    main{
+      padding: 5%;
+    }
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: "Anton", sans-serif;
     font-weight: 400;
@@ -200,6 +206,12 @@ iframe{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 33rem) {
+    .nieuwste-aflevering{
+      padding: .5rem 1rem;
+    }
 }
 
 .nieuwste-aflevering h3{
